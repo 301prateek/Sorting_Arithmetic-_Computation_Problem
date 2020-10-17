@@ -18,3 +18,5 @@ calc2=$(( a * b + c ))
 
 calc3=`awk "BEGIN{print $c + $a/$b}"`
 
+calc4=$(( a % b + c ))
+
