@@ -14,3 +14,5 @@ read -p "Enter 3rd number: " c
 
 calc1=$(( a + b * c ))
 
+calc2=$(( a * b + c ))
+
