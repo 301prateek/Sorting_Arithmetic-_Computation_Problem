@@ -30,3 +30,12 @@ calculation[3]=$calc4
 
 echo ${calculation[@]}
 
+#Storing the values from dictionary into array.
+result=()
+
+for(( i=0; i<${#calculation[@]}; i++ ))
+do
+	result[$i]=${calculation[$i]}
+done
+
+echo "Array: " ${result[@]}
