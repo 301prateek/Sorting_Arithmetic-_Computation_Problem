@@ -20,3 +20,13 @@ calc3=`awk "BEGIN{print $c + $a/$b}"`
 
 calc4=$(( a % b + c ))
 
+#Declaring dictionary and storing each result.
+
+declare -A calculation
+calculation[0]=$calc1
+calculation[1]=$calc2
+calculation[2]=$calc3
+calculation[3]=$calc4
+
+echo ${calculation[@]}
+
