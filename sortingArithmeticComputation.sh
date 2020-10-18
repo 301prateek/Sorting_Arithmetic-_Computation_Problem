@@ -39,3 +39,21 @@ do
 done
 
 echo "Array: " ${result[@]}
+
+#Program to sort the array in descending order
+
+for(( i=0; i<$((${#result[@]} - 1)); i++ ))
+do
+	for (( j=$(($i+1)); j<${#result[@]}; j++ ))
+	do
+		if [ ${result[i]} -lt ${result[j]} ]
+		then
+			temp=${result[j]}
+			result[$j]=${result[i]}
+			result[$i]=$temp
+		fi
+	done
+done
+
+echo "Sorted Array in Descending order: " ${result[@]}
+
