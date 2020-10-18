@@ -16,7 +16,7 @@ calc1=$(( a + b * c ))
 
 calc2=$(( a * b + c ))
 
-calc3=`awk "BEGIN{print $c + $a/$b}"`
+calc3=$(( c + a/b ))
 
 calc4=$(( a % b + c ))
 
@@ -57,3 +57,21 @@ done
 
 echo "Sorted Array in Descending order: " ${result[@]}
 
+#Program to sort the array in ascending order
+
+for(( i=0; i<$((${#result[@]} -1)); i++ ))
+do
+	for(( j=$(($i+1)); j<${#result[@]}; j++ ))
+	do
+		if [ ${result[i]} -gt ${result[j]} ]
+		then
+			temp=${result[i]}
+			result[$i]=${result[j]}
+			result[$j]=$temp
+
+		fi
+
+	done
+done
+
+echo "Sorted Array in Ascending order: " ${result[@]}
